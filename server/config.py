@@ -4,9 +4,9 @@ import os
 
 class EnvironmentConfig:
     """ Base class for config that is shared between environments """
-    DEFAULT_CHANGESET_COMMENT = '#hotosm-project'
+    DEFAULT_CHANGESET_COMMENT = '#logging-roads'
     # This is the address we'll use as the sender on all auto generated emails
-    EMAIL_FROM_ADDRESS = 'noreply@hotosmmail.org'
+    EMAIL_FROM_ADDRESS = 'noreply@maphubs.com'
     LOG_LEVEL = logging.ERROR
     # Mapper Level values represent number of OSM changesets
     MAPPER_LEVEL_INTERMEDIATE = 250
@@ -40,7 +40,7 @@ class EnvironmentConfig:
 
 
 class ProdConfig(EnvironmentConfig):
-    APP_BASE_URL = 'https://tasks.hotosm.org'
+    APP_BASE_URL = 'https://tasks-beta.loggingroads.org'
     API_DOCS_URL = f'{APP_BASE_URL}/api-docs/swagger-ui/index.html?' + \
                    f'url={APP_BASE_URL}/api/docs'
     LOG_DIR = '/var/log/tasking-manager-logs'
@@ -48,7 +48,7 @@ class ProdConfig(EnvironmentConfig):
 
 
 class StageConfig(EnvironmentConfig):
-    APP_BASE_URL = 'https://tasks-stage.hotosm.org'
+    APP_BASE_URL = 'https://tasks-stage.loggingroads.org'
     API_DOCS_URL = f'{APP_BASE_URL}/api-docs/swagger-ui/index.html?' + \
                    f'url={APP_BASE_URL}/api/docs'
     LOG_DIR = '/var/log/tasking-manager-logs'
