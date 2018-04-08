@@ -187,7 +187,7 @@ class ProjectAdminAPI(Resource):
                           default: false
                       changesetComment:
                           type: string
-                          default: hotosm-project-1
+                          default: osmearth-project-1
                       entitiesToMap:
                           type: string
                           default: Buildings only

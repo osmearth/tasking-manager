@@ -1,4 +1,6 @@
-# HOT tasking-manager
+# OSM Earth tasking-manager
+
+Fork of HOT Tasking Manager for OSM Earth - OSM mapping for the environment
 
 ## Intro
 The app is split into a Client (AngularJS) and Server (Python) structure.  Each can be developed independently of each other.  See below for instructions on how to set up your deve environment.

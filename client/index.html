@@ -4,28 +4,28 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>HOT Tasking Manager</title>
+    <title>OSM Earth Tasking Manager</title>
     <base href="/">
 
     <!-- for Google -->
-    <meta name="description" content="HOT Tasking Manager is a mapping tool designed and built for the Humanitarian OSM Team collaborative mapping.">
+    <meta name="description" content="OSM Earth Tasking Manager - OpenStreetMap for the Environment">
     <meta name="keywords" content="OpenStreetMap, Tasking Manager, OSM">
-    <meta name="author" content="Humanitarian OpenStreetMap Team">
-    <meta name="application-name" content="OSM Tasking Manager" />
+    <meta name="author" content="OSM Earth">
+    <meta name="application-name" content="OSM Earth Tasking Manager" />
 
 	<!-- for Facebook -->
-	<meta property="og:title" content="HOT Tasking Manager" />
-	<meta property="og:site_name" content="HOT Tasking Manager" />
+	<meta property="og:title" content="OSM Earth Tasking Manager" />
+	<meta property="og:site_name" content="OSM Earth Tasking Manager" />
 	<meta property="og:type" content="website" />
-	<meta property="og:url" content="tasks.hotosm.org" />
-	<meta property="og:description" content="HOT Tasking Manager is a mapping tool designed and built for the Humanitarian OSM Team collaborative mapping." />
+	<meta property="og:url" content="osm.earth" />
+	<meta property="og:description" content="OSM Earth Tasking Manager is a mapping tool for collaborative mapping to protect the environment." />
 
     <!-- for Twitter -->
 	<meta name="twitter:card" content="summary" />
-	<meta name="twitter:title" content="HOT Tasking Manager" />
-	<meta name="twitter:description" content="HOT Tasking Manager is a mapping tool designed and built for the Humanitarian OSM Team collaborative mapping." />
+	<meta name="twitter:title" content="OSM Earth Tasking Manager" />
+	<meta name="twitter:description" content="OSM Earth Tasking Manager is a mapping tool for collaborative mapping to protect the environment." />
 
-    <link href="./assets/img/hot-favicon.ico" rel="icon">
+    <link href="./assets/img/osm-earth-favicon.ico" rel="icon">
 
     <link href="//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,700italic,400,300,700" rel="stylesheet"/>
 
@@ -62,7 +62,7 @@
         <div class="page__headline">
             <h1 class="page__title">
                 <a href="/" title="{{ 'Visit homepage' | translate }}">
-                    <img src="./assets/img/hot-tm-logo.svg" alt="HOT logo" height="37">
+                    <img src="./assets/img/osm-earth-logo.png" alt="OSM Earth logo" height="37">
                 </a>
             </h1>
         </div>
@@ -85,11 +85,6 @@
                     <li>
                         <a href="/about" title="{{ 'Visit about' | translate }}" class="global-menu-item">
                             <span>{{ 'About' | translate }}</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="/what-is-new" title="{{ 'New features in the Tasking Manager' | translate }}" class="global-menu-item">
-                            <span>{{ 'What is New?' | translate }}</span>
                         </a>
                     </li>
                 </ul>
@@ -264,23 +259,6 @@
 <script src="app/components/show-project-aois/show-project-aois.directive.js"></script>
 <script src="app/components/project-chat/project-chat.directive.js"></script>
 <!-- /build -->
-
-<!-- Piwik -->
-<script type="text/javascript">
-  var _paq = _paq || [];
-  _paq.push(["setDomains", ["*.tasks.hotosm.org"]]);
-  _paq.push(['trackPageView']);
-  _paq.push(['enableLinkTracking']);
-  (function() {
-    var u="//piwik.hotosm.org/";
-    _paq.push(['setTrackerUrl', u+'piwik.php']);
-    _paq.push(['setSiteId', 7]);
-    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
-    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
-  })();
-</script>
-<noscript><p><img src="//piwik.hotosm.org/piwik.php?idsite=7" style="border:0;" alt="" /></p></noscript>
-<!-- End Piwik Code -->
 
 </body>
 </html>
