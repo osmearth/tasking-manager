@@ -15,6 +15,7 @@
             launchFieldPapersEditor: launchFieldPapersEditor,
             launchPotlatch2Editor: launchPotlatch2Editor,
             launchIdEditor: launchIdEditor,
+            launchLoggingRoadsEditor: launchLoggingRoadsEditor,
             getGPXUrl: getGPXUrl,
             getOSMXMLUrl: getOSMXMLUrl
         };
@@ -56,6 +57,39 @@
             var zoom = mapService.getOSMMap().getView().getZoom();
             var url = base + '#map=' +
                         [zoom, centroid[1], centroid[0]].join('/');
+            // Add changeset comment
+            var changeset = ''; // default to empty string
+            if (changesetComment && changesetComment !== ''){
+                changeset = changesetComment;
+            }
+            url += '&comment=' + encodeURIComponent(changeset);
+            // Add imagery
+            if (imageryUrl && imageryUrl !== '') {
+                // url is supposed to look like tms[22]:http://hiu...
+                var urlForImagery = imageryUrl.substring(imageryUrl.indexOf('http'));
+                urlForImagery = urlForImagery.replace('zoom', 'z');
+                url += "&background=custom:" + encodeURIComponent(urlForImagery);
+            }
+            // Add GPX
+            if (projectId && projectId !== '' && taskId && taskId !== '') {
+                url += "&gpx=" + getGPXUrl(projectId, taskId);
+            }
+            $window.open(url);
+        }
+
+        /**
+         * Lauch the iD editor
+         * @param centroid
+         * @param changesetComment
+         * @param imageryUrl
+         * @param projectId
+         * @param taskId
+         */
+        function launchLoggingRoadsEditor(centroid, changesetComment, imageryUrl, projectId, taskId){
+            var base = 'http://id.loggingroads.org/?';
+            var zoom = mapService.getOSMMap().getView().getZoom();
+            var url = base + '#map=' +
+                        [zoom, centroid[0], centroid[1]].join('/');
             // Add changeset comment
             var changeset = ''; // default to empty string
             if (changesetComment && changesetComment !== ''){

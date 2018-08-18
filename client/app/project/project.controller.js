@@ -1210,6 +1210,15 @@
                     vm.getSelectTaskIds()
                 );
             }
+            else if (editor === 'loggingroads') {
+                editorService.launchLoggingRoadsEditor(
+                    center,
+                    changesetComment,
+                    imageryUrl,
+                    vm.projectData.projectId,
+                    vm.getSelectTaskIds()
+                );
+            }
             else if (editor === 'potlatch2') {
                 editorService.launchPotlatch2Editor(center);
             }
