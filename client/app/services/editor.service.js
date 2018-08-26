@@ -18,6 +18,7 @@
             launchFieldPapersEditor: launchFieldPapersEditor,
             launchPotlatch2Editor: launchPotlatch2Editor,
             launchIdEditor: launchIdEditor,
+            launchOSMEarthEditor: launchOSMEarthEditor,
             launchLoggingRoadsEditor: launchLoggingRoadsEditor,
             getGPXUrl: getGPXUrl,
             getOSMXMLUrl: getOSMXMLUrl
@@ -81,7 +82,52 @@
         }
 
         /**
-         * Lauch the iD editor
+         * Lauch the OSM Earth editor
+         * @param centroid
+         * @param changesetComment
+         * @param imageryUrl
+         * @param projectId
+         * @param taskId
+         */
+        function launchOSMEarthEditor(centroid, changesetComment, imageryUrl, projectId, taskId, idCustomImagery, idCustomPresets, idMinEditableZoom){
+            var base = 'https://osm.earth/edit?';
+            var zoom = mapService.getOSMMap().getView().getZoom();
+            var url = base + '#map=' +
+                        [zoom, centroid[1], centroid[0]].join('/');
+            // Add changeset comment
+            var changeset = ''; // default to empty string
+            if (changesetComment && changesetComment !== ''){
+                changeset = changesetComment;
+            }
+            url += '&comment=' + encodeURIComponent(changeset);
+            // Add imagery
+            if (imageryUrl && imageryUrl !== '') {
+                // url is supposed to look like tms[22]:http://hiu...
+                var urlForImagery = imageryUrl.substring(imageryUrl.indexOf('http'));
+                urlForImagery = urlForImagery.replace('zoom', 'z');
+                url += "&background=custom:" + encodeURIComponent(urlForImagery);
+            }
+            // Add GPX
+            if (projectId && projectId !== '' && taskId && taskId !== '') {
+                url += "&gpx=" + getGPXUrl(projectId, taskId);
+            }
+            // Add Custom Imagery
+            if (idCustomImagery && idCustomImagery !== '') {
+                url += "&imagery_config=" + idCustomImagery;
+            }
+            // Add Custom Presets
+            if (idCustomPresets && idCustomPresets !== '') {
+                url += "&presets_config=" + idCustomPresets;
+            }
+            // Add Custom minEditableZoom
+            if (idMinEditableZoom) {
+                url += "&minEditableZoom=" + idMinEditableZoom;
+            }
+            $window.open(url);
+        }
+
+        /**
+         * Lauch the Logging Roads editor
          * @param centroid
          * @param changesetComment
          * @param imageryUrl

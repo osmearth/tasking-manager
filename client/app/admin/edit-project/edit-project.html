@@ -57,6 +57,12 @@
                                     </a>
                                 </li>
                                 <li>
+                                    <a title="{{ 'iD Editor Settings' | translate }}" ng-click="editProjectCtrl.currentSection = 'idsettings'"
+                                       class="aside-menu-item" ng-class="editProjectCtrl.currentSection === 'idsettings' ? 'aside-menu-item--active' : ''">
+                                        {{ 'iD Editor Settings' | translate }}
+                                    </a>
+                                </li>
+                                <li>
                                     <a title="{{ 'Project wide actions' | translate }}" ng-click="editProjectCtrl.currentSection = 'actions'"
                                        class="aside-menu-item" ng-class="editProjectCtrl.currentSection === 'actions' ? 'aside-menu-item--active' : ''">
                                         {{ 'Actions' | translate }}
@@ -450,6 +456,35 @@
                             </fieldset>
                         </div>
                             <!--/ settings -->
+                        <!-- id settings -->
+                        <div ng-show="editProjectCtrl.currentSection === 'idsettings'">
+                            <fieldset class="form__fieldset">
+                                <div class="form__group form__group--section">
+                                    <label class="form__label">{{ 'iD Imagery Config Url' | translate }}</label>
+                                    <input type="text" class="form__control form__control--medium"
+                                           name="idCustomImagery"
+                                        ng-model="editProjectCtrl.project.idCustomImagery"/>
+                                    <p>{{ 'Note: Must be a valid imagery JSON config file' | translate }}</p>
+                                </div>
+                                <div class="form__group form__group--section">
+                                    <label class="form__label">{{ 'iD Preset Config Url' | translate }}</label>
+                                    <input type="text" class="form__control form__control--medium"
+                                           name="idCustomPresets"
+                                        ng-model="editProjectCtrl.project.idCustomPresets"/>
+                                    <p>{{ 'Note: Must be a valid preset JSON config file' | translate }}</p>
+                                </div>
+                                <div class="form__group form__group--section">
+                                    <label class="form__label">{{ 'Min Editable Zoom' | translate }}</label>
+                                    <select class="form__control" ng-model="editProjectCtrl.project.idMinEditableZoom">
+                                        <option value="16">{{ '16 (default)' | translate }}</option>
+                                        <option value="14">{{ '14' | translate }}</option>
+                                        <option value="12">{{ '12' | translate }}</option>
+                                    </select>
+                                    <p>{{ 'Note: only lower zoom in lower density rural areas, please use caution with this setting, it prevent tasks from loading or cause them to run extremely slowly' | translate }}</p>
+                                </div>                              
+                            </fieldset>
+                        </div>
+                            <!--/ id settings -->
                             <!-- settings -->
                         <div ng-show="editProjectCtrl.currentSection === 'actions'">
                             <fieldset class="form__fieldset">

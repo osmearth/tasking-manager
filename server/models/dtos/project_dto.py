@@ -104,6 +104,9 @@ class ProjectDTO(Model):
     active_mappers = IntType(serialized_name='activeMappers')
     task_creation_mode = StringType(required=True, serialized_name='taskCreationMode',
                                     validators=[is_known_task_creation_mode], serialize_when_none=False)
+    id_custom_imagery = StringType(serialized_name='idCustomImagery', serialize_when_none=False)
+    id_custom_presets = StringType(serialized_name='idCustomPresets', serialize_when_none=False)
+    id_min_editable_zoom = StringType(serialized_name='idMinEditableZoom', serialize_when_none=False)
 
 
 class ProjectSearchDTO(Model):

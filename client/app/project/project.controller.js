@@ -1248,6 +1248,18 @@
                     vm.getSelectTaskIds()
                 );
             }
+            else if (editor === 'osmearth') {
+                editorService.launchOSMEarthEditor(
+                    center,
+                    changesetComment,
+                    imageryUrl,
+                    vm.projectData.projectId,
+                    vm.getSelectTaskIds(),
+                    vm.projectData.idCustomImagery,
+                    vm.projectData.idCustomPresets,
+                    vm.projectData.idMinEditableZoom,
+                );
+            }
             else if (editor === 'loggingroads') {
                 editorService.launchLoggingRoadsEditor(
                     center,
