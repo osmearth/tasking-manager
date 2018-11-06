@@ -19,7 +19,7 @@
         vm.lockedByCurrentUserVectorLayer = null;
         vm.map = null;
         vm.user = null;
-        vm.maxlengthComment = 500;
+        vm.maxlengthComment = configService.maxCommentLength;
         vm.taskUrl = '';
 
         // tab and view control
@@ -38,6 +38,8 @@
         vm.taskUnLockErrorMessage = '';
         vm.taskSplitError = false;
         vm.taskSplitCode == null;
+        vm.taskCommentError = false;
+        vm.taskCommentErrorMessage = '';
         vm.wasAutoUnlocked = false;
 
         //authorization
@@ -67,7 +69,7 @@
 
         //bound from the html
         vm.comment = '';
-        vm.usernames = [];
+        vm.suggestedUsers = [];
 
         //table sorting control
         vm.propertyName = 'username';
@@ -127,7 +129,7 @@
             autoRefresh = $interval(function () {
                 refreshProject(vm.id);
                 updateMappedTaskPerUser(vm.id);
-                //TODO do a selected task refesh too
+                //TODO do a selected task refresh too
             }, 10000);
 
             // set up the preferred editor from user preferences
@@ -191,6 +193,8 @@
             vm.taskSplitError = false;
             vm.taskSplitCode == null;
             vm.taskUndoError = false;
+            vm.taskCommentError = false;
+            vm.taskCommentErrorMessage = '';
             vm.wasAutoUnlocked = false;
         }
 
@@ -266,6 +270,23 @@
                 vm.selectInteraction.setActive(false);
                 vm.drawPolygonInteraction.setActive(true);
             }
+        };
+
+        /**
+         * Add stand-alone comment, adding it to task history.
+         */
+        vm.addStandaloneComment = function() {
+            var projectId = vm.projectData.projectId;
+            var taskId = vm.selectedTaskData.taskId;
+            var commentPromise = taskService.addTaskComment(projectId, taskId, vm.comment);
+            commentPromise.then(function (data) {
+                vm.comment = '';
+                vm.resetErrors();
+                setUpSelectedTask(data);
+            }, function (error) {
+                vm.taskCommentError = true;
+                vm.taskCommentErrorMessage = error.data.Error;
+            });
         };
 
         /**
@@ -545,7 +566,7 @@
         }
 
         /**
-         * Updates the map and contoller data for tasks locked by current user
+         * Updates the map and controller data for tasks locked by current user
          * @param projectId
          */
         function updateLockedTasksForCurrentUser(projectId) {
@@ -1444,7 +1465,7 @@
         };
 
         /**
-         * Higlights the set of tasks on the map
+         * Highlights the set of tasks on the map
          * @param doneTaskIds - array of task ids
          */
         vm.highlightTasks = function (doneTaskIds) {
@@ -1540,17 +1561,18 @@
          * @param search
          */
         vm.searchUser = function (search) {
+            // If the search is empty, do nothing.
+            if (!search || search.length === 0) {
+              vm.suggestedUsers = [];
+              return $q.resolve(vm.suggestedUsers);
+            }
+
             // Search for a user by calling the API
-            var resultsPromise = userService.searchUser(search);
+            var resultsPromise = userService.searchUser(search, vm.projectData ? parseInt(vm.projectData.projectId, 10) : null);
             return resultsPromise.then(function (data) {
                 // On success
-                vm.usernames = [];
-                if (data.usernames) {
-                    for (var i = 0; i < data.usernames.length; i++) {
-                        vm.usernames.push({'label': data.usernames[i]});
-                    }
-                }
-                return data.usernames;
+                vm.suggestedUsers = data.users;
+                return vm.suggestedUsers;
             }, function () {
                 // On error
             });
@@ -1563,7 +1585,7 @@
         vm.formatUserTag = function (item) {
             // Format the user tag by wrapping into brackets so it is easier to detect that it is a username
             // especially when there are spaces in the username
-            return '@[' + item.label + ']';
+            return '@[' + item.username + ']';
         };
     }
 })
