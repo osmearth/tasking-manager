@@ -90,7 +90,7 @@
          * @param taskId
          */
         function launchOSMEarthEditor(centroid, changesetComment, imageryUrl, projectId, taskId, idCustomImagery, idCustomPresets, idMinEditableZoom){
-            var base = 'https://osm.earth/edit?';
+            var base = 'https://edit.osm.earth?';
             var zoom = mapService.getOSMMap().getView().getZoom();
             var url = base + '#map=' +
                         [zoom, centroid[1], centroid[0]].join('/');
