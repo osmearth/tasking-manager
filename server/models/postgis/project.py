@@ -241,7 +241,7 @@ class Project(db.Model):
             return False
 
     def get_locked_tasks_for_user(self, user_id: int):
-        """ Gets tasks on project owned by specifed user id"""
+        """ Gets tasks on project owned by specified user id"""
         tasks = self.tasks.filter_by(locked_by=user_id)
 
         locked_tasks = []
@@ -251,7 +251,7 @@ class Project(db.Model):
         return locked_tasks
 
     def get_locked_tasks_details_for_user(self, user_id: int):
-        """ Gets tasks on project owned by specifed user id"""
+        """ Gets tasks on project owned by specified user id"""
         tasks = self.tasks.filter_by(locked_by=user_id)
 
         locked_tasks = []
@@ -348,6 +348,7 @@ class Project(db.Model):
         base_dto.campaign_tag = self.campaign_tag
         base_dto.organisation_tag = self.organisation_tag
         base_dto.license_id = self.license_id
+        base_dto.created = self.created
         base_dto.last_updated = self.last_updated
         base_dto.author = User().get_by_id(self.author_id).username
         base_dto.active_mappers = Project.get_active_mappers(self.id)

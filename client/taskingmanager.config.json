@@ -18,7 +18,9 @@
           "type": "WMS",
           "attribution": "test"
         }
-      ]
+      ],
+      "maxCommentLength": 5000,
+      "maxChatLength": 5000
     }
   },
   "release": {
@@ -40,7 +42,9 @@
           "type": "WMS",
           "attribution": "Source: SEDAC gpw-v3-population-density-future-estimates_2005"
         }
-      ]
+      ],
+      "maxCommentLength": 5000,
+      "maxChatLength": 5000
     }
   }
 }
