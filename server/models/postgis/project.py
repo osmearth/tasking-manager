@@ -51,6 +51,9 @@ class Project(db.Model):
     changeset_comment = db.Column(db.String)
     due_date = db.Column(db.DateTime)
     imagery = db.Column(db.String)
+    id_custom_imagery = db.Column(db.String)
+    id_custom_presets = db.Column(db.String)
+    id_min_editable_zoom = db.Column(db.Integer)
     josm_preset = db.Column(db.String)
     last_updated = db.Column(db.DateTime, default=timestamp)
     license_id = db.Column(db.Integer, db.ForeignKey('licenses.id', name='fk_licenses'))
@@ -180,6 +183,9 @@ class Project(db.Model):
         self.changeset_comment = project_dto.changeset_comment
         self.due_date = project_dto.due_date
         self.imagery = project_dto.imagery
+        self.id_custom_imagery = project_dto.id_custom_imagery
+        self.id_custom_presets = project_dto.id_custom_presets
+        self.id_min_editable_zoom = project_dto.id_min_editable_zoom
         self.josm_preset = project_dto.josm_preset
         self.last_updated = timestamp()
         self.license_id = project_dto.license_id
@@ -350,6 +356,9 @@ class Project(db.Model):
         base_dto.license_id = self.license_id
         base_dto.created = self.created
         base_dto.last_updated = self.last_updated
+        base_dto.id_custom_imagery = self.id_custom_imagery
+        base_dto.id_custom_presets = self.id_custom_presets
+        base_dto.id_min_editable_zoom = self.id_min_editable_zoom
         base_dto.author = User().get_by_id(self.author_id).username
         base_dto.active_mappers = Project.get_active_mappers(self.id)
         base_dto.task_creation_mode = TaskCreationMode(self.task_creation_mode).name

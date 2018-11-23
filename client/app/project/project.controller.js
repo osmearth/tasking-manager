@@ -1278,7 +1278,7 @@
                     vm.getSelectTaskIds(),
                     vm.projectData.idCustomImagery,
                     vm.projectData.idCustomPresets,
-                    vm.projectData.idMinEditableZoom,
+                    vm.projectData.idMinEditableZoom
                 );
             }
             else if (editor === 'loggingroads') {

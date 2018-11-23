@@ -7,7 +7,20 @@
      */
     angular
         .module('taskingManager')
-        .controller('editProjectController', ['$scope', '$location', '$routeParams', '$timeout', 'mapService','drawService', 'projectService', 'geospatialService','accountService', 'authService', 'tagService', 'licenseService','userService','messageService','settingsService', editProjectController]);
+        .controller('editProjectController', ['$scope', '$location', '$routeParams', '$timeout', 'mapService','drawService', 'projectService', 'geospatialService','accountService', 'authService', 'tagService', 'licenseService','userService','messageService','settingsService', editProjectController])
+        .directive('convertToString', function() {
+            return {
+                require: 'ngModel',
+                link: function(scope, element, attrs, ngModel) {
+                ngModel.$parsers.push(function(val) {
+                    if (val) return val.toString();
+                });
+                ngModel.$formatters.push(function(val) {
+                    return '' + val;
+                });
+                }
+            };
+            });
 
     function editProjectController($scope, $location, $routeParams, $timeout, mapService, drawService, projectService, geospatialService, accountService, authService, tagService, licenseService, userService, messageService, settingsService) {
 

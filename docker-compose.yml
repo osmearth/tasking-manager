@@ -14,5 +14,11 @@ services:
     build:
       context: ./devops/docker/postgis
       dockerfile: Dockerfile
+    volumes:
+      - 'db-data:/var/lib/postgresql/data'
     ports:
-      - '5434:5432'
+      - '5435:5432'
+volumes:
+  db-data:
+    external:
+      name: tm-db-data

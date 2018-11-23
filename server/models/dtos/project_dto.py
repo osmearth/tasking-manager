@@ -107,7 +107,7 @@ class ProjectDTO(Model):
                                     validators=[is_known_task_creation_mode], serialize_when_none=False)
     id_custom_imagery = StringType(serialized_name='idCustomImagery', serialize_when_none=False)
     id_custom_presets = StringType(serialized_name='idCustomPresets', serialize_when_none=False)
-    id_min_editable_zoom = StringType(serialized_name='idMinEditableZoom', serialize_when_none=False)
+    id_min_editable_zoom = IntType(serialized_name='idMinEditableZoom')
 
 
 class ProjectSearchDTO(Model):

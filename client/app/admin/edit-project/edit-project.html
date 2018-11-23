@@ -475,7 +475,7 @@
                                 </div>
                                 <div class="form__group form__group--section">
                                     <label class="form__label">{{ 'Min Editable Zoom' | translate }}</label>
-                                    <select class="form__control" ng-model="editProjectCtrl.project.idMinEditableZoom">
+                                    <select class="form__control" ng-model="editProjectCtrl.project.idMinEditableZoom" convert-to-string>
                                         <option value="16">{{ '16 (default)' | translate }}</option>
                                         <option value="14">{{ '14' | translate }}</option>
                                         <option value="12">{{ '12' | translate }}</option>
