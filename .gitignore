@@ -30,3 +30,4 @@ venv_aws/
 
 .env
 settings.json
+run-dev.sh
