@@ -37,9 +37,15 @@
                     <form class="form">
                         <div class="form__group form__group--section--sm">
                             <dl>
+<<<<<<< HEAD
                                 <dt>Option 1:</dt>
                                 <dd>
                                     <p>Draw the Area of Interest on the map.</p>
+=======
+                                <dt>{{ 'Option 1:' | translate }}</dt>
+                                <dd>
+                                    <p>{{ 'Draw the Area of Interest on the map.' | translate }}</p>
+>>>>>>> 26a8dc23a3fa36a5c3af1f6ded0a7a963e53c8aa
                                     <button class="button button--achromic" type="button"
                                             ng-click="createProjectCtrl.drawAOI()"><span>{{ 'Draw' | translate }}</span>
                                     </button>
@@ -59,7 +65,11 @@
                             <dl>
                                 <dt>Option 2:</dt>
                                 <dd>
+<<<<<<< HEAD
                                     <p>{{ 'Import a GeoJSON, KML, or zipped SHP file.' | translate }}</p>
+=======
+                                    <p>{{ 'Import a GeoJSON, KML, OSM or zipped SHP file.' | translate }}</p>
+>>>>>>> 26a8dc23a3fa36a5c3af1f6ded0a7a963e53c8aa
                                     <button class="button button--achromic"
                                          ngf-select="createProjectCtrl.import($file)">{{ 'Import' | translate }}
                                     </button>
@@ -71,12 +81,16 @@
                                     <strong>{{ 'Error' | translate }}:</strong> {{ 'Please provide a valid GeoJSON, KML or zipped Shapefile.' | translate }}
                                 </p>
                             </div>
+<<<<<<< HEAD
 
+=======
+>>>>>>> 26a8dc23a3fa36a5c3af1f6ded0a7a963e53c8aa
                             <div ng-show="createProjectCtrl.nonPolygonError"
                                  class="alert alert--danger" role="alert">
                                 <p>
                                     <strong>{{ 'Error' | translate }}:</strong> {{ 'The AOI contains geometries which are not polygons or multipolygons' | translate }}
                                 </p>
+<<<<<<< HEAD
                             </div>
                             <div ng-show="createProjectCtrl.selfIntersectionError"
                                  class="alert alert--danger" role="alert">
@@ -96,6 +110,15 @@
                                         {{ 'to convert it to GeoJSON.' | translate }}</p>
                                 </dd>
                             </dl>
+=======
+                            </div>
+                            <div ng-show="createProjectCtrl.selfIntersectionError"
+                                 class="alert alert--danger" role="alert">
+                                <p>
+                                    <strong>{{ 'Error' | translate }}:</strong> {{ 'The AOI contains self intersections' | translate }}
+                                </p>
+                            </div>
+>>>>>>> 26a8dc23a3fa36a5c3af1f6ded0a7a963e53c8aa
                         </div>
                     </form>
                     <div class="navigation-steps">

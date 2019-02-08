@@ -179,7 +179,11 @@ class MappingService:
         if task_ids_str is not None:
             task_ids = map(int, task_ids_str.split(','))
             tasks = Task.get_tasks(project_id, task_ids)
+<<<<<<< HEAD
             if not tasks or len(tasks) == 0:
+=======
+            if not tasks or tasks.count() == 0:
+>>>>>>> 26a8dc23a3fa36a5c3af1f6ded0a7a963e53c8aa
                 raise NotFound()
         else:
             tasks = Task.get_all_tasks(project_id)
@@ -210,7 +214,11 @@ class MappingService:
         if task_ids_str:
             task_ids = map(int, task_ids_str.split(','))
             tasks = Task.get_tasks(project_id, task_ids)
+<<<<<<< HEAD
             if not tasks or len(tasks) == 0:
+=======
+            if not tasks or tasks.count() == 0:
+>>>>>>> 26a8dc23a3fa36a5c3af1f6ded0a7a963e53c8aa
                 raise NotFound()
         else:
             tasks = Task.get_all_tasks(project_id)

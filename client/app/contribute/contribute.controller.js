@@ -7,9 +7,15 @@
      */
     angular
         .module('taskingManager')
+<<<<<<< HEAD
         .controller('contributeController', ['$scope', '$location', 'mapService', 'searchService', 'projectMapService', 'tagService', 'languageService', contributeController]);
 
     function contributeController($scope, $location, mapService, searchService, projectMapService, tagService, languageService) {
+=======
+        .controller('contributeController', ['$scope', '$location', '$anchorScroll', 'mapService', 'searchService', 'projectMapService', 'tagService', 'languageService', contributeController]);
+
+    function contributeController($scope, $location, $anchorScroll, mapService, searchService, projectMapService, tagService, languageService) {
+>>>>>>> 26a8dc23a3fa36a5c3af1f6ded0a7a963e53c8aa
 
         var vm = this;
 
@@ -119,6 +125,7 @@
                         searchParams.projectStatuses += ',';
                     }
                 }
+<<<<<<< HEAD
             }
             if (vm.mappingTypes.length > 0) {
                 searchParams.mappingTypes = '';
@@ -129,6 +136,18 @@
                     }
                 }
             }
+=======
+            }
+            if (vm.mappingTypes.length > 0) {
+                searchParams.mappingTypes = '';
+                for (var i = 0; i < vm.mappingTypes.length; i++) {
+                    searchParams.mappingTypes += vm.mappingTypes[i];
+                    if (i < vm.mappingTypes.length - 1) {
+                        searchParams.mappingTypes += ',';
+                    }
+                }
+            }
+>>>>>>> 26a8dc23a3fa36a5c3af1f6ded0a7a963e53c8aa
             if (vm.searchOrganisation) {
                 searchParams.organisationTag = vm.searchOrganisation;
             }
@@ -149,11 +168,20 @@
                 vm.pagination = data.pagination;
                 projectMapService.replaceFeatures(data.mapResults)
                 setURLParams(searchParams);
+<<<<<<< HEAD
+=======
+                if (searchParams.page) {
+                    scrollToTop();
+                }
+>>>>>>> 26a8dc23a3fa36a5c3af1f6ded0a7a963e53c8aa
             }, function () {
                 // On error
                 setURLParams(searchParams);
                 vm.results = {};
                 projectMapService.showProjectsOnMap(vm.results);
+                if (searchParams.page) {
+                    scrollToTop();
+                }
             });
         }
 
@@ -163,6 +191,18 @@
         vm.search = function (page) {
             searchProjects(page);
         };
+<<<<<<< HEAD
+=======
+
+
+        /**
+         * Scroll to top of page
+         */
+        function scrollToTop() {
+            $location.hash('top');
+            $anchorScroll();
+        }
+>>>>>>> 26a8dc23a3fa36a5c3af1f6ded0a7a963e53c8aa
 
         /**
          * Set organisation tags

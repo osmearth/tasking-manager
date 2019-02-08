@@ -303,9 +303,15 @@ INSERT INTO hotnew.project_allowed_users(
     (select distinct project_id, user_id
     from hotold.project_allowed_users);
 
+<<<<<<< HEAD
 -- TASK SPLITTABLE FLAG
 -- Ensure the splittable flag is consistent with the x,y,zoom values
 UPDATE hotnew.tasks SET splittable = (x IS NOT NULL AND y IS NOT NULL AND zoom IS NOT NULL);
+=======
+-- TASK ISSQUARE FLAG
+-- Ensure the is_sqaure flag is consistent with the x,y,zoom values
+UPDATE hotnew.tasks SET is_square = (x IS NOT NULL AND y IS NOT NULL AND zoom IS NOT NULL);
+>>>>>>> 26a8dc23a3fa36a5c3af1f6ded0a7a963e53c8aa
 
 
 --------------------------------------------------	

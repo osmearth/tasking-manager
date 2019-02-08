@@ -117,7 +117,11 @@
                         title="{{ 'Go to the instructions tab' | translate }}"
                         class='tab--item'
                         ng-class="projectCtrl.currentTab == 'instructions'? 'active':''">
+<<<<<<< HEAD
                         <a href="#">
+=======
+                        <a>
+>>>>>>> 26a8dc23a3fa36a5c3af1f6ded0a7a963e53c8aa
                             {{ 'Instructions' | translate }}
                         </a>
                     </li>
@@ -125,7 +129,11 @@
                         title="{{ 'Go to the mapping tab' | translate }}"
                         class='tab--item'
                         ng-class="projectCtrl.currentTab == 'mapping'? 'active':''">
+<<<<<<< HEAD
                         <a href="#">
+=======
+                        <a>
+>>>>>>> 26a8dc23a3fa36a5c3af1f6ded0a7a963e53c8aa
                             {{ 'Map' | translate }}
                         </a>
                     </li>
@@ -133,7 +141,11 @@
                         title="{{ 'Go to the validation tab' | translate }}"
                         class='tab--item'
                         ng-class="projectCtrl.currentTab == 'validation'? 'active':''">
+<<<<<<< HEAD
                         <a href="#">
+=======
+                        <a>
+>>>>>>> 26a8dc23a3fa36a5c3af1f6ded0a7a963e53c8aa
                             {{ 'Validate' | translate }}
                         </a>
                     </li>
@@ -141,7 +153,11 @@
                         title="{{ 'Go to the chat tab' | translate }}"
                         class='tab--item'
                         ng-class="projectCtrl.currentTab == 'chat'? 'active':''">
+<<<<<<< HEAD
                         <a href="#">
+=======
+                        <a>
+>>>>>>> 26a8dc23a3fa36a5c3af1f6ded0a7a963e53c8aa
                             {{ 'Questions and Comments' | translate }}
                         </a>
                     </li>
@@ -242,7 +258,11 @@
                                         <div ng-hide="projectCtrl.user"
                                              class="alert"
                                              role="alert">
+<<<<<<< HEAD
                                             <p>In order to start contributing, please <a ng-show="!accountNavCtrl.account.username" ng-click="accountNavCtrl.login()">login first</a>.</p>
+=======
+                                            <p>{{ 'In order to start contributing, please' | translate }} <a ng-show="!accountNavCtrl.account.username" ng-click="accountNavCtrl.login()">{{ 'login first' | translate }}</a>.</p>
+>>>>>>> 26a8dc23a3fa36a5c3af1f6ded0a7a963e53c8aa
                                         </div>
                                         <div ng-show="projectCtrl.user && projectCtrl.userCanMap === false"
                                              class="error"
@@ -288,7 +308,11 @@
                                 <h3 style="display: inline-block;">{{ 'Mapping' | translate }}</h3>
                                 <div ng-show="projectCtrl.mappingStep === 'locked'" style="display: inline-block; float: right;">
                                     <i class="fa fa-clock-o"></i>
+<<<<<<< HEAD
                                     <span>{{ projectCtrl.getLockTime() }} {{ 'minutes left' | translate }}</span>
+=======
+                                    <span>{{ projectCtrl.getLockTime() }} {{ ' left' | translate }}</span>
+>>>>>>> 26a8dc23a3fa36a5c3af1f6ded0a7a963e53c8aa
                                 </div>
                                 <div ng-show="projectCtrl.mappingStep === 'viewing' ">
                                     <!-- task information -->
@@ -329,7 +353,11 @@
                                         </div>
                                         <div ng-show="projectCtrl.taskLockError && !projectCtrl.isAuthorized">
                                             <div class="alert" role="alert">
+<<<<<<< HEAD
                                                 <p>In order to start contributing, please <a ng-show="!accountNavCtrl.account.username" ng-click="accountNavCtrl.login()">login first</a>.</p>
+=======
+                                                <p>{{ 'In order to start contributing, please' | translate }} <a ng-show="!accountNavCtrl.account.username" ng-click="accountNavCtrl.login()">{{ 'login first' | translate }}</a>.</p>
+>>>>>>> 26a8dc23a3fa36a5c3af1f6ded0a7a963e53c8aa
                                             </div>
                                         </div>
                                         <div ng-hide="projectCtrl.taskLockError">
@@ -344,7 +372,11 @@
                                             <div>
                                                 <div ng-hide="projectCtrl.user">
                                                     <div class="alert" role="alert">
+<<<<<<< HEAD
                                                         <p>In order to start contributing, please <a ng-show="!accountNavCtrl.account.username" ng-click="accountNavCtrl.login()">login first</a>.</p>
+=======
+                                                        <p>{{ 'In order to start contributing, please' | translate }} <a ng-show="!accountNavCtrl.account.username" ng-click="accountNavCtrl.login()">{{ 'login first' | translate }}</a>.</p>
+>>>>>>> 26a8dc23a3fa36a5c3af1f6ded0a7a963e53c8aa
                                                     </div>
                                                 </div>
                                                 <div ng-show="projectCtrl.user && projectCtrl.taskLockError"
@@ -399,6 +431,7 @@
                                             </div>
                                         </div>
                                     </div>
+<<<<<<< HEAD
                                 </div>
                                 <!-- task locked UI -->
                                 <div ng-show="projectCtrl.mappingStep === 'locked'"><!-- task mapping UI -->
@@ -560,6 +593,158 @@
                                         </div>
                                     </div>
                                 </div>
+=======
+                                </div>
+                                <!-- task locked UI -->
+                                <div ng-show="projectCtrl.mappingStep === 'locked'"><!-- task mapping UI -->
+                                    <div class="form__group form__group--section">
+                                        <div ng-show="projectCtrl.selectedTaskData.perTaskInstructions">
+                                            <h4>{{ 'Extra Instructions' | translate }}</h4>
+                                            <p markdown-to-html="projectCtrl.selectedTaskData.perTaskInstructions"></p>
+                                        </div>
+                                        <div>
+                                            <h6>{{ 'Get started by choosing your editor of choice.' | translate }}</h6>
+                                            <div class="form__input-group">
+                                                <select class="form__control form__control__medium"
+                                                        ng-model="projectCtrl.selectedEditor"
+                                                        ng-change="projectCtrl.updatePreferedEditor()">
+                                                    <option value="ideditor" selected="true">iD Editor</option>
+                                                    <option value="josm">JOSM</option>
+                                                    <option value="potlatch2">Potlatch 2</option>
+                                                    <option value="fieldpapers">Field Papers</option>
+                                                </select>
+                                                <span class="form__input-group-button">
+                                                    <button class="button button--sm"
+                                                            ng-click="projectCtrl.startEditor(projectCtrl.selectedEditor)">
+                                                        {{ 'Start Editor' | translate }}
+                                                    </button>
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <p><a href="{{ projectCtrl.getGpxDownloadURL() }}" target="_blank">{{ 'Download' | translate }}</a> {{ 'this task as a gpx file to see its boundary.' | translate }}</p>
+                                        </div>
+                                        <div ng-show="projectCtrl.editorStartError === 'josm-error'">
+                                            <div class="alert alert--danger" role="alert">
+                                                <button class="alert__button-dismiss" title="{{ 'Dismiss alert' | translate }}"
+                                                        ng-click="projectCtrl.editorStartError = ''">
+                                                    <span>{{ 'Dismiss' | translate }}</span>
+                                                </button>
+                                                <p>{{ 'JOSM remote control did not respond. Do you have JOSM running and configured to be controlled remotely?' | translate }}</p>
+                                            </div>
+                                        </div>
+                                        <div ng-show="projectCtrl.editorStartError === 'josm-imagery-error'">
+                                            <div class="alert alert--warning" role="alert">
+                                                <button class="alert__button-dismiss" title="{{ 'Dismiss alert' | translate }}"
+                                                        ng-click="projectCtrl.editorStartError = ''">
+                                                    <span>{{ 'Dismiss' | translate }}</span>
+                                                </button>
+                                                <p>{{ 'JOSM had a problem loading the project imagery.' | translate }}</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form__group form__group--section">
+                                        <div>
+                                            <h6 style="width:84%">Task too big to complete quickly? Or is the satellite imagery not good? Choose split task or mark as bad imagery.</h6>
+                                            
+                                        </div>
+                                        <ul class="list-type--none buttons--sidebyside">
+                                            <li>
+                                                <div ng-show="projectCtrl.isSelectedSplittable">
+                                                    <button id="split-task-btn" style="padding:16px" class="button button--secondary" ng-click="projectCtrl.splitTask()">
+                                                        <!-- from collecticons.io-->
+                                                        <?xml version="1.0" encoding="utf-8"?>
+                                                        <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+                                                        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="12px" height="12px" viewBox="0 0 512 512" enable-background="new 0 0 512 512" xml:space="preserve">
+                                                        <path id="split-task" fill="#ffffff" d="M416,288v64h-79.6c-1.5-0.2-4.2-1.4-5.4-2.2L237.3,256l93.8-93.8c1.2-0.9,3.9-2,5.4-2.2H416v64l96-96l-96-96v64h-80
+                                                            c-17.2,0-37.8,8.5-49.9,20.7L210.7,192H0v128h210.7l75.3,75.3c12.2,12.2,32.7,20.7,49.9,20.7h80v64l96-96L416,288z"/>
+                                                        </svg>
+                                                        <!-- <i class="icon-split"></i> -->
+                                                        {{ ' Split Task' | translate }}
+                                                    </button>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div ng-show="projectCtrl.taskSplitError && projectCtrl.taskSplitCode == 403 ">
+                                                    <div class="error" role="alert">
+                                                        <p>{{ 'Task is not splittable' | translate }}</p>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div ng-show="projectCtrl.taskSplitError && !projectCtrl.taskSplitCode">
+                                                    <div class="error" role="alert">
+                                                        <p>{{ 'Task could not be split' | translate }}</p>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <button id="bad-imagery-btn" style="padding:16px" class="button button--secondary"
+                                                        ng-click="projectCtrl.unLockTaskMapping(projectCtrl.comment, 'BADIMAGERY')">
+                                                        <!-- <i class="icon-danger"></i> -->
+                                                        <!-- from collecticons.io-->
+                                                        <?xml version="1.0" encoding="utf-8"?>
+                                                        <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+                                                        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="12px" height="12px" viewBox="0 0 512 512" enable-background="new 0 0 512 512" xml:space="preserve">
+                                                        <path id="bad-imagery" fill="#ffffff" d="M480.2,392.4L287.8,55.6c-17.5-30.6-46-30.6-63.5,0L31.8,392.4C14.3,423,28.8,448,64,448h384
+                                                            C483.2,448,497.7,423,480.2,392.4z M256,416c-22.1,0-40-17.9-40-40c0-22.1,17.9-40,40-40s40,17.9,40,40C296,398.1,278.1,416,256,416
+                                                            z M288,320h-64V160h64V320z"/>
+                                                        </svg>
+                                                        {{ ' Mark as Bad Imagery' | translate }}
+                                                </button>
+                                            </li>
+                                            
+                                            </ul>
+                                        <div>
+                                            <h6 style="width:84%">Can't finish but need to stop mapping? Or have you completely mapped the area? Leave a comment and select one of the options below that matches your editing status.</h6>
+                                            <div ng-include="'/app/project/comment-box.html'"></div>
+                                        </div>
+                                        <ul class="list-type--none buttons--sidebyside">
+                                            <li>
+                                                <button id="stop-mapping-btn" class="button button--secondary"
+                                                        ng-click="projectCtrl.stopMapping(projectCtrl.comment)"
+                                                        style="width:208%">
+                                                        <!-- from collecticons.io-->
+                                                        <?xml version="1.0" encoding="utf-8"?>
+                                                        <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+                                                        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="12px" height="12px" viewBox="0 0 512 512" enable-background="new 0 0 512 512" xml:space="preserve">
+                                                        <path id="stop-mapping" fill="#ffffff"  d="m160,352l192,0l0,-192l-192,0l0,192zm96,-352c-141.4,0 -256,114.6 -256,256s114.6,256 256,256s256,-114.6 256,-256s-114.6,-256 -256,-256zm135.8,391.8c-36.3,36.2 -84.5,56.2 -135.8,56.2s-99.5,-20 -135.8,-56.2c-36.2,-36.3 -56.2,-84.5 -56.2,-135.8s20,-99.5 56.2,-135.8c36.3,-36.2 84.5,-56.2 135.8,-56.2s99.5,20 135.8,56.2c36.2,36.3 56.2,84.5 56.2,135.8s-20,99.5 -56.2,135.8z"/>
+                                                        </svg>
+                                                        {{ ' Stop Mapping' | translate }}
+                                                </button>
+                                            </li>
+                                                    
+                                            <li>
+                                                <button id="complete-mapping-btn" class="button"
+                                                        ng-click="projectCtrl.unLockTaskMapping(projectCtrl.comment, 'MAPPED')"
+                                                        style="width:132%">
+                                                        <!-- from collecticons.io-->
+                                                        <?xml version="1.0" encoding="utf-8"?>
+                                                        <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+                                                        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="12px" height="12px" viewBox="0 0 512 512" enable-background="new 0 0 512 512" xml:space="preserve">
+                                                        <polygon id="complete-mapping" fill="#ffffff"  points="197.43961906433105,462.2024230957031 19.373008728027344,284.13482666015625 62.93051719665527,240.57638549804688 192.86768913269043,370.5115966796875 448.51847648620605,58.048545837402344 496.1955394744873,97.0572280883789 " id="svg_2" fill="#ffffff" fill-opacity="1" stroke="#ffffff" stroke-opacity="1" stroke-width="11"/>
+                                                        </svg>
+                                                        <!-- <i class="icon-sm-tick"></i> -->
+                                                        {{ ' Mark as Completely Mapped' | translate }}
+                                                </button>
+                                            </li>
+                                           
+                                        </ul>
+                                       
+                                        <div ng-show="projectCtrl.taskUnLockError">
+                                            <div>
+                                                <div class="error" role="alert">
+                                                    <p>{{ 'There was a problem unlocking the task.' | translate }} {{ projectCtrl.taskUnLockErrorMessage }}</p>
+                                                </div>
+                                            </div>
+                                            <!-- <button class="button button--achromic button--secondary"
+                                                    ng-click="projectCtrl.resetToSelectingStep()">
+                                                {{ 'Cancel' | translate }}
+                                            </button> -->
+                                        </div>
+                                    </div>
+                                </div>
+>>>>>>> 26a8dc23a3fa36a5c3af1f6ded0a7a963e53c8aa
 
                             </div>
                         </div>
@@ -704,7 +889,11 @@
                                 <h3 style="display: inline-block;">{{ 'Validation' | translate }}</h3>
                                 <div ng-show="projectCtrl.validatingStep === 'locked'" style="display: inline-block; float: right;">
                                     <i class="fa fa-clock-o"></i>
+<<<<<<< HEAD
                                     <span>{{ projectCtrl.getLockTime() }} {{ 'minutes left' | translate }}</span>
+=======
+                                    <span>{{ projectCtrl.getLockTime() }} {{ ' left' | translate }}</span>
+>>>>>>> 26a8dc23a3fa36a5c3af1f6ded0a7a963e53c8aa
                                 </div>
                                 <div ng-show="projectCtrl.validatingStep === 'viewing' ">
                                     <!-- task information -->
@@ -837,6 +1026,7 @@
                                                 <p>{{ 'JOSM had a problem loading the project imagery.' | translate }}</p>
                                             </div>
                                         </div>
+<<<<<<< HEAD
                                     </div>
                                     <div class="form__group form__group--section">
                                         <h6>Done editing? Leave a comment and select one of the options below that matches your editing status</h6>
@@ -873,11 +1063,39 @@
                                             </li>
                                         </ul>
                                     </div>
+=======
+                                    </div>
+                                    <div class="form__group form__group--section">
+                                        <h6>{{ 'Done editing? Leave a comment and select one of the options below that matches your editing status.' | translate }}</h6>
+                                        <div ng-include="'/app/project/comment-box.html'"></div>
+                                        <ul class="list-type--none buttons--sidebyside">
+                                            <li>
+                                                <button class="button"
+                                                        ng-click="projectCtrl.unLockTaskValidation(projectCtrl.comment, 'VALIDATED')">
+                                                    {{ 'Mark as Valid' | translate }}
+                                                </button>
+                                            </li>
+                                            <li>
+                                                <button class="button button--secondary"
+                                                        ng-click="projectCtrl.unLockTaskValidation(projectCtrl.comment, 'INVALIDATED')">
+                                                    {{ 'Mark as Invalid' | translate }}
+                                                </button>
+                                            </li>
+                                            <li>
+                                                <button class="button button--achromic button--outline--secondary"
+                                                        ng-click="projectCtrl.stopValidating(projectCtrl.comment)">
+                                                    {{ 'Stop Validating' | translate }}
+                                                </button>
+                                            </li>
+                                        </ul>
+                                    </div>
+>>>>>>> 26a8dc23a3fa36a5c3af1f6ded0a7a963e53c8aa
                                     <div ng-show="projectCtrl.taskUnLockError">
                                         <div>
                                             <div class="error" role="alert">
                                                 <p>{{ 'There was a problem unlocking the task.' | translate }} {{ projectCtrl.taskUnLockErrorMessage }}</p>
                                             </div>
+<<<<<<< HEAD
                                         </div>
                                         <!-- <button class="button button--achromic"
                                                 ng-click="projectCtrl.resetToSelectingStep()">
@@ -928,8 +1146,15 @@
                                                 </button>
                                                 <p>{{ 'JOSM had a problem loading the project imagery.' | translate }}</p>
                                             </div>
+=======
+>>>>>>> 26a8dc23a3fa36a5c3af1f6ded0a7a963e53c8aa
                                         </div>
+                                        <!-- <button class="button button--achromic"
+                                                ng-click="projectCtrl.resetToSelectingStep()">
+                                            {{ 'Cancel' | translate }}
+                                        </button> -->
                                     </div>
+<<<<<<< HEAD
                                     <div class="form__group form__group--section">
                                         <h6>Done editing? Leave a comment and select one of the options below that matches your editing status</h6>
                                          <textarea class="form__control space-bottom--none" type="text" mentio
@@ -972,6 +1197,84 @@
                                                 <p>{{ 'There was a problem unlocking the tasks.' | translate }} {{ projectCtrl.taskUnLockErrorMessage }}</p>
                                             </div>
                                         </div>
+=======
+
+                                </div>
+                                <div ng-show="projectCtrl.validatingStep === 'multi-locked'">
+                                    <p>Multiple Tasks are locked for you for validation.</p>
+                                    <p>{{ 'Tasks' | translate }} {{ projectCtrl.getSelectTaskIds() }}
+                                        {{ 'are locked for validation.' | translate }}
+                                    </p>
+                                    <div class="form__group form__group--section">
+                                        <div>
+                                            <h6>Get started by choosing your editor of choice.</h6>
+                                            <div class="form__input-group">
+                                                <select class="form__control form__control__medium"
+                                                        ng-model="projectCtrl.selectedEditor"
+                                                        ng-change="projectCtrl.updatePreferedEditor()">
+                                                    <option value="ideditor" selected="true">iD Editor</option>
+                                                    <option value="josm">JOSM</option>
+                                                    <option value="potlatch2">Potlatch 2</option>
+                                                    <option value="fieldpapers">Field Papers</option>
+                                                </select>
+                                                <span class="form__input-group-button">
+                                                    <button class="button button--sm"
+                                                            ng-click="projectCtrl.startEditor(projectCtrl.selectedEditor)">
+                                                        {{ 'Start Editor' | translate }}
+                                                    </button>
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <div ng-show="projectCtrl.editorStartError === 'josm-error'">
+                                            <div class="alert alert--danger" role="alert">
+                                                <button class="alert__button-dismiss" title="{{ 'Dismiss alert' | translate }}"
+                                                        ng-click="projectCtrl.editorStartError = ''">
+                                                    <span>{{ 'Dismiss' | translate }}</span>
+                                                </button>
+                                                <p>{{ 'JOSM remote control did not respond. Do you have JOSM running and configured to be controlled remotely?' | translate }}</p>
+                                            </div>
+                                        </div>
+                                        <div ng-show="projectCtrl.editorStartError === 'josm-imagery-error'">
+                                            <div class="alert alert--warning" role="alert">
+                                                <button class="alert__button-dismiss" title="{{ 'Dismiss alert' | translate }}"
+                                                        ng-click="projectCtrl.editorStartError = ''">
+                                                    <span>{{ 'Dismiss' | translate }}</span>
+                                                </button>
+                                                <p>{{ 'JOSM had a problem loading the project imagery.' | translate }}</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form__group form__group--section">
+                                        <h6>{{ 'Done editing? Leave a comment and select one of the options below that matches your editing status.' | translate }}</h6>
+                                        <div ng-include="'/app/project/comment-box.html'"></div>
+                                        <ul class="list-type--none buttons--sidebyside">
+                                            <li>
+                                                <button class="button"
+                                                        ng-click="projectCtrl.unLockMultiTaskValidation(projectCtrl.comment, 'VALIDATED')">
+                                                    {{ 'Mark all as Valid' | translate }}
+                                                </button>
+                                            </li>
+                                            <li>
+                                                <button class="button button--secondary"
+                                                        ng-click="projectCtrl.unLockMultiTaskValidation(projectCtrl.comment, 'INVALIDATED')">
+                                                    {{ 'Mark all as Invalid' | translate }}
+                                                </button>
+                                            </li>
+                                            <li>
+                                                <button class="button button--achromic button--outline--secondary"
+                                                        ng-click="projectCtrl.stopMultiTaskValidation(projectCtrl.comment)">
+                                                    {{ 'Stop Validating' | translate }}
+                                                </button>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div ng-show="projectCtrl.taskUnLockError">
+                                        <div>
+                                            <div class="alert alert--danger" role="alert">
+                                                <p>{{ 'There was a problem unlocking the tasks.' | translate }} {{ projectCtrl.taskUnLockErrorMessage }}</p>
+                                            </div>
+                                        </div>
+>>>>>>> 26a8dc23a3fa36a5c3af1f6ded0a7a963e53c8aa
                                         <!-- <button class="button button--achromic"
                                                 ng-click="projectCtrl.resetToSelectingStep()">
                                             {{ 'Cancel' | translate }}
@@ -1017,11 +1320,21 @@
                                               </td>
                                               <td>
                                                   <span am-time-ago="item.actionDate | amUtc | amLocal"></span>
+<<<<<<< HEAD
+=======
+                                                  <span ng-if="projectCtrl.user.isExpert">
+                                                    <a ng-show="projectCtrl.isAtticDateLive(item)" class="diff-control {{projectCtrl.selectedItem.actionDate === item.actionDate ? 'selected' : ''}}" ng-click="projectCtrl.selectItemForDiff(item)" title="{{ 'Choose two entries for diff or same once twice for attic data' | translate }}"></a>
+                                                 </span>
+>>>>>>> 26a8dc23a3fa36a5c3af1f6ded0a7a963e53c8aa
                                               </td>
                                           </tr>
                                           <tr ng-show="item.action === 'COMMENT'">
                                             <td colspan="2" class="comment-text">
+<<<<<<< HEAD
                                               <span markdown-to-html="item.actionText"></span>
+=======
+                                              <span markdown-to-html="item.actionText" ng-click="projectCtrl.onShortCodeClick($event)"></span>
+>>>>>>> 26a8dc23a3fa36a5c3af1f6ded0a7a963e53c8aa
                                             </td>
                                           </tr>
                                       </tbody>
@@ -1135,9 +1448,13 @@
                         </svg>
                         {{ 'Locked by you' | translate }}
                     </div>
+<<<<<<< HEAD
                 </div>
                 <div ng-show="projectCtrl.hasPriorityArea" class="ol-control legend-control priority-areas">
                     <div>
+=======
+                    <div ng-show="projectCtrl.hasPriorityArea">
+>>>>>>> 26a8dc23a3fa36a5c3af1f6ded0a7a963e53c8aa
                         <svg height="15" width="15">
                             <rect width="15" height="15" stroke="rgba(255, 0, 0, 1)" stroke-width="3"
                                   fill="rgba(255, 0, 0, 0.3)"/>
@@ -1184,3 +1501,35 @@
     </button>
 </section>
 <!-- accept license modal -->
+
+<!-- JOSM editor failed modal -->
+<section class="modal modal-tm" ng-show="projectCtrl.editorStartError === 'josm-error'">
+    <div class="modal__inner">
+        <header class="modal__header">
+            <div class="modal__headline">
+                <h3 class="modal__title">{{ 'Contact with JOSM Failed' | translate }}</h3>
+            </div>
+        </header>
+        <div class="modal__body">
+            <div>
+                <p>
+                    {{ 'JOSM remote control did not respond. Do you have JOSM running and configured to be controlled remotely?' | translate }}
+                </p>
+            </div>
+        </div>
+        <footer class="modal__footer">
+            <div>
+                <button class="button" type="button"
+                        ng-click="projectCtrl.editorStartError = ''">{{ 'Dismiss' | translate }}
+                </button>
+                <button class="button button--secondary" type="button"
+                        ng-click="projectCtrl.resetSelectedEditor()">{{ "Stop using JOSM" | translate }}
+                </button>
+            </div>
+        </footer>
+    </div>
+    <a class="modal__button-dismiss" title="{{ 'Close' | translate }}" ng-click="projectCtrl.editorStartError = ''">
+        {{ 'Dismiss' | translate }}
+    </a>
+</section>
+<!-- JOSM editor failed modal -->

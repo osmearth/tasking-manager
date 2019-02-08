@@ -466,7 +466,11 @@ class UserSetExpertMode(Resource):
               default: Token sessionTokenHere==
             - name: is_expert
               in: path
+<<<<<<< HEAD:server/api/users/user_apis.py
               description: 'true' to enable expert mode, 'false' to disable
+=======
+              description: true to enable expert mode, false to disable
+>>>>>>> 26a8dc23a3fa36a5c3af1f6ded0a7a963e53c8aa:server/api/users/user_apis.py
               required: true
               type: string
         responses:

@@ -11,6 +11,13 @@ class EnvironmentConfig:
     # Mapper Level values represent number of OSM changesets
     MAPPER_LEVEL_INTERMEDIATE = 250
     MAPPER_LEVEL_ADVANCED = 500
+<<<<<<< HEAD
+=======
+    # Time to wait until task auto-unlock,
+    # e.g. '2h' (2 hours) or '7d' (7 days) or '30m' (30 minutes) or '1h30m' (1.5 hours)
+    TASK_AUTOUNLOCK_AFTER = '2h'
+
+>>>>>>> 26a8dc23a3fa36a5c3af1f6ded0a7a963e53c8aa
     OSM_OAUTH_SETTINGS = {
         'base_url': 'https://www.openstreetmap.org/api/0.6/',
         'consumer_key': os.getenv('TM_CONSUMER_KEY', None),
@@ -39,7 +46,11 @@ class EnvironmentConfig:
 
 
 class ProdConfig(EnvironmentConfig):
+<<<<<<< HEAD
     APP_BASE_URL = 'https://tasks-beta.loggingroads.org'
+=======
+    APP_BASE_URL = 'https://tasks.hotosm.org'
+>>>>>>> 26a8dc23a3fa36a5c3af1f6ded0a7a963e53c8aa
     API_DOCS_URL = f'{APP_BASE_URL}/api-docs/swagger-ui/index.html?' + \
                    f'url={APP_BASE_URL}/api/docs'
     LOG_DIR = '/var/log/tasking-manager-logs'
@@ -47,7 +58,11 @@ class ProdConfig(EnvironmentConfig):
 
 
 class StageConfig(EnvironmentConfig):
+<<<<<<< HEAD
     APP_BASE_URL = 'https://tasks-stage.loggingroads.org'
+=======
+    APP_BASE_URL = 'https://tasks-stage.hotosm.org'
+>>>>>>> 26a8dc23a3fa36a5c3af1f6ded0a7a963e53c8aa
     API_DOCS_URL = f'{APP_BASE_URL}/api-docs/swagger-ui/index.html?' + \
                    f'url={APP_BASE_URL}/api/docs'
     LOG_DIR = '/var/log/tasking-manager-logs'

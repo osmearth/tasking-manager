@@ -110,6 +110,13 @@ a:active {
  * https://developer.mozilla.org/en-US/docs/Web/Events/click#Safari_Mobile
  */
 
+<<<<<<< HEAD
+=======
+ button {
+   cursor: pointer;
+ }
+
+>>>>>>> 26a8dc23a3fa36a5c3af1f6ded0a7a963e53c8aa
  .button, .button:visited {
    -webkit-border-radius: 4px;
    -moz-border-radius: 4px;
@@ -121,6 +128,10 @@ a:active {
    display: inline-block;
    font-weight: 600;
    border: 2px solid $link-color;
+<<<<<<< HEAD
+=======
+   cursor: pointer;
+>>>>>>> 26a8dc23a3fa36a5c3af1f6ded0a7a963e53c8aa
    &:hover {
      transition: all 0.3s ease 0s;
      -webkit-transition: all 0.3s;
@@ -247,6 +258,7 @@ a:active {
   padding-left: 0;
 }
 
+<<<<<<< HEAD
 #split-task-btn:hover #split-task
 { 
   fill: $warm-grey;
@@ -262,6 +274,19 @@ a:active {
 
 #complete-mapping-btn:hover #complete-mapping
 { 
+=======
+#split-task-btn:hover #split-task {
+  fill: $warm-grey;
+}
+#bad-imagery-btn:hover #bad-imagery {
+  fill: $warm-grey;
+}
+#stop-mapping-btn:hover #stop-mapping {
+  fill: $warm-grey;
+}
+
+#complete-mapping-btn:hover #complete-mapping {
+>>>>>>> 26a8dc23a3fa36a5c3af1f6ded0a7a963e53c8aa
   fill: $orange;
 }
 
@@ -278,8 +303,11 @@ a:active {
   }
 }
 
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> 26a8dc23a3fa36a5c3af1f6ded0a7a963e53c8aa
 .icon-split {
   background-image: url("../../icons/split.svg");
   background-size: 12px 12px;
@@ -350,7 +378,10 @@ input, textarea {
   }
   li {
     margin-bottom: 1.3em;
+<<<<<<< HEAD
 
+=======
+>>>>>>> 26a8dc23a3fa36a5c3af1f6ded0a7a963e53c8aa
   }
 }
 
@@ -439,7 +470,10 @@ table {
     .paging--next {
       margin-left: 1em;
     }
+<<<<<<< HEAD
 
+=======
+>>>>>>> 26a8dc23a3fa36a5c3af1f6ded0a7a963e53c8aa
     .paging--previous {
       margin-right: 1em;
     }
