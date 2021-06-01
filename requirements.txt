@@ -39,7 +39,7 @@ Shapely==1.5.17
 six==1.10.0
 SQLAlchemy==1.1.10
 transifex-client==0.12.4
-urllib3==1.21.1
+urllib3==1.26.5
 webencodings==0.5.1
 Werkzeug==0.12.2
 newrelic==3.2.0.91
